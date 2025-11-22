@@ -990,6 +990,73 @@ body.lightbox-open {
   }
 }
 
+/* Share section (scoped) ----------------------------------------------- */
+.section--share {
+  margin-bottom: clamp(2rem, 8vw, 3.6rem);
+}
+
+.section--share .share-card {
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-medium);
+  padding: 1.4rem 1.6rem;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14px 30px rgba(61, 45, 37, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.section--share .share-buttons {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.section--share .share-note {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.section--share .share-emoji-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  padding: 0.8rem 0;
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--divider);
+  background: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section--share .share-emoji-button:hover,
+.section--share .share-emoji-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(61, 45, 37, 0.15);
+  outline: none;
+}
+
+.section--share .share-emoji-button--ghost {
+  background: transparent;
+}
+
+.section--share .share-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.section--share .share-text {
+  line-height: 1;
+  font-weight: 500;
+}
+
+
 /* -------- RSVP Form Styles -------- */
 
 .rsvp-overlay {
