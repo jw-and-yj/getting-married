@@ -145,7 +145,11 @@ code {
   text-align: center;
   padding: clamp(4rem, 20vh, 8rem) 1.6rem;
   color: var(--text-strong);
-  background: #2d2320 url('imgs/hero.webp') center / cover no-repeat;
+  background-color: #2d2320;
+  background-image: url('imgs/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   width: 100vw;
   /* 핵심: --vh를 쓰고, fallback으로 100vh */
@@ -153,6 +157,13 @@ code {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('imgs/hero_web.webp');
+    background-position: center 50%;
+  }
 }
 
 .hero>* {
