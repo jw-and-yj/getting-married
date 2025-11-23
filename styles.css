@@ -869,6 +869,10 @@ body.lightbox-open {
 .gallery-lightbox__nav {
   border: none;
   background: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 999px;
@@ -876,7 +880,14 @@ body.lightbox-open {
   cursor: pointer;
   display: grid;
   place-items: center;
-  flex: 0 0 auto;
+}
+
+.gallery-lightbox__nav--prev {
+  left: clamp(0.6rem, 3vw, 1rem);
+}
+
+.gallery-lightbox__nav--next {
+  right: clamp(0.6rem, 3vw, 1rem);
 }
 
 
@@ -904,23 +915,10 @@ body.lightbox-open {
     right: 0.6rem;
   }
 
-  /* 양쪽 네비가 공간을 먹으니까 모바일에선 가장자리로 붙이거나 숨기자 */
   .gallery-lightbox__nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 2.4rem;
     height: 2.4rem;
-    margin: 0;
     background: rgba(0, 0, 0, 0.25);
-  }
-
-  .gallery-lightbox__nav:first-of-type {
-    left: 0.35rem;
-  }
-
-  .gallery-lightbox__nav:last-of-type {
-    right: 0.35rem;
   }
 }
 

@@ -131,12 +131,12 @@ function createLightbox() {
   lightbox.setAttribute('role', 'dialog');
   lightbox.setAttribute('aria-modal', 'true');
   lightbox.innerHTML = `
-    <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" aria-label="이전 사진 보기">&#10094;</button>
     <figure class="gallery-lightbox__figure">
-      <button type="button" class="gallery-lightbox__close" aria-label="사진 닫기">&times;</button>
       <img class="gallery-lightbox__image" alt="확대된 사진">
+      <button type="button" class="gallery-lightbox__close" aria-label="사진 닫기">&times;</button>
+      <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" aria-label="이전 사진 보기">&#10094;</button>
+      <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" aria-label="다음 사진 보기">&#10095;</button>
     </figure>
-    <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" aria-label="다음 사진 보기">&#10095;</button>
   `;
 
   lightboxImage = lightbox.querySelector('.gallery-lightbox__image');
