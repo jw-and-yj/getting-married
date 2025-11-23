@@ -21,7 +21,7 @@ SUPPORTED_EXT = {".jpg", ".jpeg", ".png", ".webp", ".avif"}
 
 
 def iter_images(folder: Path) -> Iterable[Path]:
-  for path in folder.rglob("*"):
+  for path in folder.glob("*"):
     if path.is_file() and path.suffix.lower() in SUPPORTED_EXT:
       yield path
 
@@ -49,13 +49,14 @@ def main() -> None:
   parser = argparse.ArgumentParser(description="Create lightweight thumbnails from photos/")
   parser.add_argument("--source", type=Path, default=repo_root / "photos", help="원본 이미지 경로 (기본: ./photos)")
   parser.add_argument("--output", type=Path, default=repo_root / "thumbnails", help="썸네일 출력 경로 (기본: ./thumbnails)")
-  parser.add_argument("--max-size", type=int, default=900, help="긴 변 기준 최대 픽셀 (기본: 900)")
-  parser.add_argument("--quality", type=int, default=82, help="저장 품질 (기본: 82)")
+  parser.add_argument("--max-size", type=int, default=512, help="긴 변 기준 최대 픽셀 (기본: 900)")
+  parser.add_argument("--quality", type=int, default=60, help="저장 품질 (기본: 82)")
   parser.add_argument("--force", action="store_true", help="기존 썸네일이 최신이어도 모두 다시 생성")
   args = parser.parse_args()
 
   source_dir = args.source.resolve()
   output_dir = args.output.resolve()
+  
 
   if not source_dir.exists():
     raise SystemExit(f"[error] source directory not found: {source_dir}")

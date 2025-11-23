@@ -60,11 +60,13 @@ def default_alt_from_filename(path: Path) -> str:
 
 def build_gallery_items(img_dir: Path, prefix: str = "") -> List[GalleryItem]:
     items: List[GalleryItem] = []
-    f_list = img_dir.rglob("*")
+    f_list = img_dir.glob("*")
     #suffle
     
     f_list = list(f_list)
     random.shuffle(f_list)
+    script_dir = Path(__file__).parent.resolve()
+    root_dir = script_dir.parent.resolve()
     
     for p in f_list:
         if not p.is_file():
@@ -76,7 +78,7 @@ def build_gallery_items(img_dir: Path, prefix: str = "") -> List[GalleryItem]:
             w, h = im.size
 
         variant = choose_variant(w, h)
-        rel_path = p.name
+        rel_path = p.resolve().relative_to(root_dir).as_posix()
 
         # 브라우저에서 불러올 때 /assets/... 이런 식이면 prefix에 "/assets" 넣기
         prefix = Path(prefix)
