@@ -1,17 +1,25 @@
 /* Base palette and typography ------------------------------------------- */
+/*
+#3B403C
+#EDF25C
+#D97941
+#D9C1B4
+#F24141
+*/
 :root {
-  --bg-base: #F2EBC9;
-  --panel-bg: #BCBF56;
-  --panel-shadow: 0 30px 70px rgba(72, 51, 41, 0.12);
-  --accent: #BCBF56;
-  --accent-strong: #A2A637;
-  --tag-bg: rgba(228, 168, 162, 0.16);
-  --divider: rgba(73, 56, 45, 0.12);
-  --divider-strong: rgba(73, 56, 45, 0.2);
-  --text-strong: #3D4039;
-  --text-body: #5A463F;
-  --text-muted: #8C776D;
-  --surface-soft: rgba(248, 242, 235, 0.7);
+  --bg-base: #D9C1B4;
+  --panel-bg: #3B403C;
+  --panel-shadow: 0 30px 70px rgba(59, 64, 60, 0.16);
+  --accent: #D97941;
+  --accent-strong: #F24141;
+  --button-bg: rgba(255, 255, 255, 0.24);
+  --tag-bg: rgba(237, 242, 92, 0.2);
+  --divider: rgba(59, 64, 60, 0.12);
+  --divider-strong: rgba(59, 64, 60, 0.2);
+  --text-strong: #3B403C;
+  --text-body: #4A423C;
+  --text-muted: #7A716C;
+  --surface-soft: rgba(217, 193, 180, 0.65);
   --white: #FFFFFF;
   --radius-large: 30px;
   --radius-medium: 22px;
@@ -19,9 +27,10 @@
   --font-body: "gowun-dodum", sans-serif;
   --font-display: "adobe-jenson-pro-display", serif;
   /*--font-hero: "sandoll-gongbyunggaktab", sans-serif;*/
-  --font-hero: "dunkel-serif-expanded", sans-serif;
+  --font-section-eyebrow: "gowun-batang", sans-serif;
   --font-hero-weight: 400;
   --font-hero: "gowun-batang", sans-serif;
+  --font-greeting: "gowun-batang", serif;
   --font-hero-weight: 400;
   color: var(--text-body);
 }
@@ -61,7 +70,7 @@ body {
   font-weight: 300;
   line-height: 1.7;
   color: var(--text-body);
-  background: var(--surface-soft);
+  background: var(--white);
   overflow-x: hidden;
 }
 
@@ -259,8 +268,9 @@ code {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--text-muted);
+  background: var(--button-bg);
   transition: background-color 0.2s ease, color 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--divider-strong);
 }
 
 .section-nav a:hover,
@@ -290,11 +300,11 @@ code {
   margin-bottom: 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .section-heading__eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   letter-spacing: 0.38em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -304,6 +314,8 @@ code {
   margin: 0;
   font-size: 0.95rem;
   color: var(--text-muted);
+  font-family: var(--font-section-eyebrow);
+  font-weight: 300;
 }
 
 .section--countdown {
@@ -348,6 +360,26 @@ code {
 .countdown-card__note {
   margin: 0;
   color: var(--text-muted);
+}
+
+/* Greeting --------------------------------------------------------------- */
+.section--greeting .greeting-card {
+  border: 0px solid var(--divider);
+  border-radius: var(--radius-medium);
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  background: rgba(255, 255, 255, 0.0);
+  box-shadow: 0 14px 30px rgba(61, 45, 37, 0.00);
+  display: grid;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.section--greeting .greeting-card__line {
+  margin: 0;
+  font-family: var(--font-greeting);
+  color: var(--text-body);
+  font-size: 1.5rem;
+  line-height: 1.65;
 }
 
 /* Schedule --------------------------------------------------------------- */
@@ -410,7 +442,7 @@ code {
 }
 
 .schedule-actions__btn {
-  width: 100%;
+  width: auto;
 }
 
 .schedule-call {
@@ -418,7 +450,7 @@ code {
 }
 
 .schedule-call__btn {
-  width: 100%;
+  width: auto;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -611,41 +643,38 @@ code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  padding: 0.85rem 1.85rem;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 500;
-  border: none;
-  background: var(--accent-strong);
-  /*linear-gradient(120deg, var(--accent), var(--accent-strong));*/
-  color: var(--white);
-  /*box-shadow: 0 16px 36px rgba(192, 124, 117, 0.26);*/
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  font-weight: 300;
+  border: 1px solid var(--divider-strong);
+  background: var(--button-bg);
+
+  color: var(--text-body);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .button:hover,
 .button:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(72, 109, 71, 0.32);
-  opacity: 0.98;
+  background: var(--tag-bg);
+  color: var(--text-strong);
   outline: none;
 }
 
 .button--ghost {
-  background: var(--accent-strong);
+  background: var(--button-bg);
   border: 1px solid var(--divider-strong);
-  box-shadow: none;
+  color: var(--text-body);
 }
 
 .button--ghost:hover,
 .button--ghost:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(72, 109, 71, 0.32);
-  opacity: 0.98;
-  outline: none;
+  background: var(--button-bg);
+  border-color: var(--divider-strong);
+  color: var(--text-strong);
 }
 
 /* Location --------------------------------------------------------------- */
