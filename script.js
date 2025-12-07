@@ -82,7 +82,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-const GALLERY_PAGE_SIZE = 31;
+const GALLERY_PAGE_SIZE = 29;
 const KAKAO_SHARE_KEY = '9ad6190b5a0e195986e9a8277530effb';
 const galleryGrid = document.getElementById('gallery-grid') || document.querySelector('.gallery-grid');
 const galleryPagination = document.getElementById('gallery-pagination') || document.querySelector('.gallery-pagination');
