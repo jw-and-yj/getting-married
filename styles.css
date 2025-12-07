@@ -382,6 +382,19 @@ code {
   line-height: 1.65;
 }
 
+.section--greeting .greeting-card__line--family {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  letter-spacing: 0.24em;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+.section--greeting .greeting-card__line--family:first-of-type {
+  margin-top: 1.2rem;
+}
+
 /* Schedule --------------------------------------------------------------- */
 .schedule-grid {
   display: flex;
