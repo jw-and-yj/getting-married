@@ -66,7 +66,38 @@ function startCountdown(selector) {
 // 🟢 DOM 준비된 후에 실행
 document.addEventListener('DOMContentLoaded', () => {
   startCountdown('#hero-countdown-text');
+  setupAccountFold();
 });
+
+function setupAccountFold() {
+  const toggle = document.querySelector('.account-toggle');
+  const body = document.getElementById('account-body');
+  if (!toggle || !body) return;
+
+  const icon = toggle.querySelector('.account-toggle__icon');
+  const label = toggle.querySelector('.account-toggle__label');
+
+  const closedLabel = body.dataset.labelCollapsed || '계좌 열기';
+  const openLabel = body.dataset.labelExpanded || '계좌 접기';
+
+  const updateState = (expanded) => {
+    toggle.setAttribute('aria-expanded', String(expanded));
+    if (icon) {
+      icon.textContent = expanded ? '▾' : '▸';
+    }
+    if (label) {
+      label.textContent = expanded ? openLabel : closedLabel;
+    }
+    body.classList.toggle('is-collapsed', !expanded);
+  };
+
+  updateState(false);
+
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    updateState(!expanded);
+  });
+}
 
 countdownTargets.forEach((node) => renderCountdown(node));
 

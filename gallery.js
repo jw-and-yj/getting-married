@@ -1,6 +1,12 @@
 // 자동 생성된 갤러리 데이터 (generate_gallery_js.py 에서 생성)
 galleryImages = [
   {
+    "src": "./photos/MSCG1357.webp",
+    "variant": "tall",
+    "alt": "MSCG1357",
+    "aspect": 0.6667
+  },
+  {
     "src": "./photos/MSCG0875.webp",
     "variant": "wide",
     "alt": "MSCG0875",
@@ -109,12 +115,6 @@ galleryImages = [
     "aspect": 0.6667
   },
   {
-    "src": "./photos/MSCG1165.webp",
-    "variant": "tall",
-    "alt": "MSCG1165",
-    "aspect": 0.6667
-  },
-  {
     "src": "./photos/MSCG0944.webp",
     "variant": "tall",
     "alt": "MSCG0944",
@@ -161,12 +161,6 @@ galleryImages = [
     "variant": "wide",
     "alt": "ZSCF0407",
     "aspect": 1.5
-  },
-  {
-    "src": "./photos/MSCG1357.webp",
-    "variant": "tall",
-    "alt": "MSCG1357",
-    "aspect": 0.6667
   },
   {
     "src": "./photos/MSCG0631.webp",

@@ -67,7 +67,7 @@
 }
 
 .calendar__month__year {
-  font-family: var(--font-display, "adobe-jenson-pro", serif);
+  font-family: var(--font-hero);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-size: 0.9rem;

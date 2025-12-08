@@ -15,7 +15,7 @@ const seasonGroups = {
 };
 
 const MONTH_NAMES = [
-  'January', 'February·2', 'March·3', 'April·4', 'May', 'June',
+  'January', 'February·2', 'March·3월', 'April·4', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 

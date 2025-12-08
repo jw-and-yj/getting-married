@@ -35,6 +35,18 @@
   color: var(--text-body);
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+
 html,
 body {
   margin: 0;
@@ -467,6 +479,72 @@ code {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.account-controls {
+  margin-bottom: 0.8rem;
+}
+
+.account-toggle-line {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-top: 0.9rem;
+  text-align: center;
+}
+
+.account-toggle__line {
+  display: block;
+  height: 1px;
+  background: var(--divider);
+}
+
+.account-toggle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  border-radius: 999px;
+  border: 1px solid var(--divider);
+  background: #ffffff;
+  padding: 0.3rem 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s ease, border 0.2s ease;
+}
+
+.account-toggle:hover,
+.account-toggle:focus-visible {
+  border-color: var(--text-strong);
+  background: #ffffff;
+  outline: none;
+}
+
+.account-toggle__icon {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.account-body {
+  max-height: 999px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.account-body.is-collapsed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .account-grid {
