@@ -31,12 +31,6 @@ galleryImages = [
     "aspect": 0.6667
   },
   {
-    "src": "./photos/MSCG1097.webp",
-    "variant": "tall",
-    "alt": "MSCG1097",
-    "aspect": 0.6667
-  },
-  {
     "src": "./photos/MSCG1307.webp",
     "variant": "tall",
     "alt": "MSCG1307",
@@ -100,6 +94,12 @@ galleryImages = [
     "src": "./photos/ZSCF0302.webp",
     "variant": "tall",
     "alt": "ZSCF0302",
+    "aspect": 0.6667
+  },
+  {
+    "src": "./photos/MSCG1097.webp",
+    "variant": "tall",
+    "alt": "MSCG1097",
     "aspect": 0.6667
   },
   {
