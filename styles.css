@@ -392,6 +392,7 @@ code {
   color: var(--text-body);
   font-size: 1.2rem;
   line-height: 1.65;
+  white-space: nowrap;
 }
 
 .section--greeting .greeting-card__line--family {
