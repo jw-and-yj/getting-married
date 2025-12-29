@@ -390,15 +390,15 @@ code {
   margin: 0;
   font-family: var(--font-greeting);
   color: var(--text-body);
-  font-size: 1.2rem;
+  font-size: clamp(0.85rem, 4.5vw, 1.2rem);
   line-height: 1.65;
   white-space: nowrap;
 }
 
 .section--greeting .greeting-card__line--family {
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 3.4vw, 1rem);
   font-family: var(--font-body);
-  letter-spacing: 0.24em;
+  letter-spacing: clamp(0.08em, 0.8vw, 0.24em);
   font-weight: 400;
   color: var(--text-muted);
   margin-top: 0;
